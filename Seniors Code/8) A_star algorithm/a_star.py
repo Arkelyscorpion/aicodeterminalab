@@ -14,7 +14,7 @@ def makeGraph():
     
     
 def a_star(src, adj, heur, goals):
-    pq, expanded_nodes, expanded = [], dict(), set()
+    pq, expanded_nodes, visited = [], dict(), set()
     hq.heapify(pq)
     hq.heappush(pq, (heur[src] + 0, src, heur[src], 0, '$')) #(h_val + g_val, curr_node, h_val, g_val, parent)  
    
@@ -28,8 +28,8 @@ def a_star(src, adj, heur, goals):
             expanded_nodes[curr_node] = parent
             break
         
-        if(curr_node not in expanded):
-            expanded.add(curr_node)
+        if(curr_node not in visited):
+            visited.add(curr_node)
             expanded_nodes[curr_node] = parent
         else:
             continue

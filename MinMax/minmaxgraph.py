@@ -18,20 +18,39 @@ score1 = {
     'I':9,
     'J':8
 }
+# def minmax(node,is_max):
+#     if not graph[node]:
+#         return score1[node]
+#     if is_max:
+#         max_score=float("-inf")
+#         for i in graph[node]:
+#             score=minmax(i,False)
+#             max_score=max(max_score,score)
+#         return max_score
+#     else:
+#         min_score=float("inf")
+#         for i in graph[node]:
+#             score=minmax(i,True)
+#             min_score=min(min_score,score)
+#         return min_score
+
+
 def minmax(node,is_max):
     if not graph[node]:
         return score1[node]
     if is_max:
-        max_score=float("-inf")
+        max_score = float('-inf')
         for i in graph[node]:
-            score=minmax(i,False)
-            max_score=max(max_score,score)
+            score = minmax(i,False)
+            max_score = max(max_score,score)
         return max_score
     else:
-        min_score=float("inf")
+        min_score = float('inf')
         for i in graph[node]:
-            score=minmax(i,True)
-            min_score=min(min_score,score)
+            score = minmax(i, True)
+            min_score = min(min_score, score)
         return min_score
+
+
 score=minmax('A',True)
 print("Best Score:",score)

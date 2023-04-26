@@ -30,6 +30,8 @@ def minmax(board,is_max):
                         min_score=score
                         best_move=(i,j)
         return min_score,best_move
+
+
 def evaluate(board):
     for row in board:
         if row[0]==row[1]==row[2] and row[0]!='.':

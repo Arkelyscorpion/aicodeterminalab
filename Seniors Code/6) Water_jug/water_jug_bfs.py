@@ -31,7 +31,7 @@ def water_jug_bfs(j1, j2, water):
     target = [(0, water), (water, 0)]   # required target state
     
     while(len(q) != 0):
-        
+
         curr = q.popleft();
         if(curr in target):
             isSolvable = True
@@ -66,10 +66,9 @@ def water_jug_bfs(j1, j2, water):
         
         for poss in possiblities:
             if(poss not in visited):
-                x, y = poss[0], poss[1]
-                q.append((x, y))
-                visited.add((x, y))
-                parent[(x, y)] = curr
+                q.append(poss)
+                visited.add(poss)
+                parent[poss] = curr
             
     if(isSolvable):
         printPath(curr, parent)

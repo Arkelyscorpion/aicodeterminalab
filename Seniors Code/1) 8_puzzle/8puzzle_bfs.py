@@ -3,7 +3,7 @@ from collections import deque
 # Convert list of list to tuple of tuple
 def makeTuple(grid):
     return tuple(tuple(ele) for ele in grid)
-
+print(makeTuple([[1,2,3],[2,3,4]]))
 #convert tuple of tuple to list of list
 def makeList(grid):
     return [[grid[i][j] for j in range(3)] for i in range(3)]
@@ -81,18 +81,8 @@ if __name__ == "__main__":
     
     start, end = [], []
     
-#    print("\nEnter starting configuration : ")
-#    for i in range(3):
-#        temp = map(int, input().strip().split())
-#        start.append(list(temp))
-#    
-#    print("\nEnter ending configuration : ")
-#    for i in range(3):
-#        temp = map(int, input().strip().split())
-#        end.append(list(temp))
-    
     start = [[1, 2, 3], [5, 6, 0], [7, 8, 4]]
-    end =   [[1, 2, 3], [5, 6, 4], [7, 0, 8]]
+    end =   [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
     
     # Find the position of zero in the starting configuration
     zero = tuple()

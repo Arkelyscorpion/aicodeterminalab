@@ -6,8 +6,8 @@ parent={}
 state=[[1,2,3],
        [4,5,6],
        [0,7,8]]
-target=[[2,0,3],
-        [1,5,6],
+target=[[2,5,3],
+        [1,0,6],
         [4,7,8]]
 zero=(2,0)
 parent[tuple(map(tuple,state))]=None
